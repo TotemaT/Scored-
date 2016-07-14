@@ -35,11 +35,11 @@
                     android:textStyle="bold"/>
 
                 <Button
-                    android:id="@+id/start"
+                    android:id="@+id/start_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|end"
-                    android:background="@android:color/transparent"
+                    android:background="?android:attr/selectableItemBackground"
                     android:text="@string/start"
                     android:textColor="#FFFFFF"/>
 
@@ -76,7 +76,7 @@
 
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_player"
+        android:id="@+id/add_player_fab"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
         android:layout_margin="@dimen/fab_margin"

@@ -9,8 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.ScoreActivity"
-            android:parentActivityName=".activities.SelectionActivity"/>
+            android:name=".activities.ScoreActivity"/>
+
         <activity android:name=".activities.SelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

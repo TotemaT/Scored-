@@ -8,10 +8,14 @@ public class Player {
     private int score;
     private String color;
 
-    public Player(String name) {
-        this.name = name;
+    public Player() {
+        this.name = "New Player";
         this.color = Constants.defaultColour;
         this.score = 0;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getScore() {
@@ -32,5 +36,9 @@ public class Player {
 
     public void incrementScore() {
         score = score++;
+    }
+
+    public void decrementScore() {
+        score = score--;
     }
 }
