@@ -5,5 +5,5 @@ package be.matteotaroli.scored;
  */
 
 public interface Constants {
-    String defaultColour = "#FF0000";
+    String defaultColour = "#199200";
 }

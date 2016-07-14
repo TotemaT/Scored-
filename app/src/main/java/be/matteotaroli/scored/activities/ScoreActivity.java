@@ -1,7 +1,9 @@
-package be.matteotaroli.scored;
+package be.matteotaroli.scored.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import be.matteotaroli.scored.R;
 
 public class ScoreActivity extends AppCompatActivity {
 
