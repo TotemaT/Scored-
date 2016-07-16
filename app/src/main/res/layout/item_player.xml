@@ -5,10 +5,9 @@
               android:clickable="true"
               android:orientation="vertical">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <Button
@@ -22,13 +21,14 @@
 
         <EditText
             android:id="@+id/player_name_editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|start"
-            android:layout_marginLeft="@dimen/item_text_margin"
-            android:layout_marginStart="@dimen/item_text_margin"
-            android:hint="Player's name"
-            android:background="@android:color/transparent"/>
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|start"
+            android:hint="Player's name"/>
 
         <ImageButton
             android:id="@+id/remove_btn"
@@ -40,7 +40,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/ic_remove"/>
 
-    </FrameLayout>
+    </LinearLayout>
 
     <View
         android:id="@+id/divider"
