@@ -3,4 +3,7 @@
     <string name="default_name">Player Name</string>
     <string name="start">Start</string>
     <string name="player_list">Players list</string>
+
+    <string name="extra_players" translatable="false">extra_players</string>
+    <string name="players_key" translatable="false">players_key</string>
 </resources>

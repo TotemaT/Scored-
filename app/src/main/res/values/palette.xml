@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette colours -->
+    <color name="default_color">@color/green</color>
+
+    <color name="red">#F44336</color>
+    <color name="purple">#7B1FA2</color>
+    <color name="indigo">#536DFE</color>
+    <color name="blue">#2196F3</color>
+    <color name="green">#4CAF50</color>
+    <color name="lime">#CDDC39</color>
+    <color name="amber">#FFC107</color>
+    <color name="orange">#FF9800</color>
+
+    <array name="palette">
+        <item>@color/red</item>
+        <item>@color/purple</item>
+        <item>@color/indigo</item>
+        <item>@color/blue</item>
+        <item>@color/green</item>
+        <item>@color/lime</item>
+        <item>@color/amber</item>
+        <item>@color/orange</item>
+    </array>
+</resources>

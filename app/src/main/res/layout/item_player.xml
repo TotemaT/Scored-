@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="@dimen/item_height"
-             android:orientation="horizontal">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/item_height"
+              android:clickable="true"
+              android:orientation="vertical">
 
-    <Button
-        android:id="@+id/color_circle_btn"
-        android:layout_width="@dimen/item_icon_size"
-        android:layout_height="@dimen/item_icon_size"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/item_icon_margin"
-        android:layout_marginStart="@dimen/item_icon_margin"
-        android:background="@drawable/circle"/>
-
-    <TextView
-        android:id="@+id/player_name_textView"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/item_text_margin"
-        android:layout_marginStart="@dimen/item_text_margin"
-        android:text="@string/default_name"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/color_circle_btn"
+            android:layout_width="@dimen/item_icon_size"
+            android:layout_height="@dimen/item_icon_size"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/item_icon_margin"
+            android:layout_marginStart="@dimen/item_icon_margin"
+            android:background="@drawable/circle"/>
+
+        <EditText
+            android:id="@+id/player_name_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="@dimen/item_text_margin"
+            android:layout_marginStart="@dimen/item_text_margin"
+            android:hint="Player's name"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/remove_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="@dimen/item_icon_margin"
+            android:layout_marginRight="@dimen/item_icon_margin"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_remove"/>
+
+    </FrameLayout>
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginLeft="72dp"
+        android:layout_marginLeft="@dimen/item_text_margin"
+        android:layout_marginStart="@dimen/item_text_margin"
         android:background="@color/divider"/>
 
-</FrameLayout>
+</LinearLayout>
