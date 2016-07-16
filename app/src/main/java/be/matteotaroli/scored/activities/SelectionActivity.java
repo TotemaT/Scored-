@@ -36,8 +36,7 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
     @BindView(R.id.recyclerview)
     RecyclerView recyclerView;
 
-    RecyclerView.Adapter adapter;
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
 
     private ArrayList<Player> players;
 
@@ -49,8 +48,7 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
         ButterKnife.bind(this);
 
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         if (savedInstanceState != null) {
             players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
@@ -71,6 +69,8 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
     @OnClick(R.id.start_btn)
     public void Start() {
         Log.d(TAG, "Start counting");
+        if (players.size() == 0) return;
+
         Intent i = new Intent(SelectionActivity.this, ScoreActivity.class);
 
         i.putParcelableArrayListExtra(getString(R.string.extra_players), players);

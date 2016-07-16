@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    android:id="@+id/activity_score"
+<FrameLayout
+    android:id="@+id/coordinator_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="be.matteotaroli.scored.activities.ScoreActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test"
-        app:layout_constraintBottom_toBottomOf="@+id/activity_score"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_score"
-        app:layout_constraintRight_toRightOf="@+id/activity_score"
-        app:layout_constraintTop_toTopOf="@+id/activity_score"/>
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="top"/>
 
-</android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:listitem="@layout/item_player"/>
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"/>
+</FrameLayout>

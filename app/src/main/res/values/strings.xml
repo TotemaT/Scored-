@@ -2,6 +2,7 @@
     <string name="app_name">Scored!</string>
     <string name="default_name">Player Name</string>
     <string name="start">Start</string>
+    <string name="stop">Stop</string>
     <string name="player_list">Players list</string>
 
     <string name="extra_players" translatable="false">extra_players</string>

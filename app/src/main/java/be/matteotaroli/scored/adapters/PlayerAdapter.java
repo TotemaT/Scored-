@@ -1,6 +1,5 @@
 package be.matteotaroli.scored.adapters;
 
-import android.content.Context;
 import android.graphics.PorterDuff;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -31,8 +30,8 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
 
     private List<Player> players;
 
-    RecyclerRemoveItemListener removeListener;
-    ColorPickedListener colorPickedListener;
+    private RecyclerRemoveItemListener removeListener;
+    private ColorPickedListener colorPickedListener;
 
     public PlayerAdapter(List<Player> players, RecyclerRemoveItemListener removeListener, ColorPickedListener colorPickedListener) {
         this.players = players;
@@ -43,7 +42,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_player, parent, false);
-        ViewHolder vh = new ViewHolder(v, removeListener, colorPickedListener);
+        ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
@@ -52,7 +51,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         Player p = players.get(position);
         holder.playerNameEt.setText(p.getName());
 
-        holder.colorButton.getBackground().setColorFilter(players.get(position).getColor(), PorterDuff.Mode.SRC_ATOP);
+        holder.colorButton.getBackground().setColorFilter(p.getColor(), PorterDuff.Mode.SRC_ATOP);
 
         if (position == getItemCount()) holder.divider.setVisibility(View.INVISIBLE);
         else holder.divider.setVisibility(View.VISIBLE);
@@ -75,14 +74,8 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         @BindView(R.id.divider)
         View divider;
 
-        RecyclerRemoveItemListener removeListener;
-        ColorPickedListener colorPickerListener;
-
-        public ViewHolder(View itemView, RecyclerRemoveItemListener removeListener, ColorPickedListener colorPickedListener) {
+        ViewHolder(View itemView) {
             super(itemView);
-
-            this.removeListener = removeListener;
-            this.colorPickerListener = colorPickedListener;
 
             ButterKnife.bind(this, itemView);
 

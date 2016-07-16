@@ -12,7 +12,7 @@ public class Player implements Parcelable {
 
     public Player() {
         this.name = "";
-        this.color = 5025616;
+        this.color = -11751600;
         this.score = 0;
     }
 
@@ -41,11 +41,11 @@ public class Player implements Parcelable {
     }
 
     public void incrementScore() {
-        score = score++;
+        score++;
     }
 
     public void decrementScore() {
-        score = score--;
+        score--;
     }
 
     @Override
