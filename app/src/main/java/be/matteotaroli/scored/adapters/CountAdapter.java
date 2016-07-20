@@ -1,11 +1,15 @@
 package be.matteotaroli.scored.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -27,6 +31,8 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
     private static final String TAG = "CountAdapter";
 
     private List<Player> players;
+    private int height;
+    private int width;
 
     private RecyclerItemClickListener clickListener;
     private RecyclerItemLongClickListener longClickListener;
@@ -41,6 +47,10 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_score, parent, false);
         ViewHolder vh = new ViewHolder(v);
+
+        height = ((Activity) parent.getContext()).getWindowManager().getDefaultDisplay().getHeight();
+        width = ((Activity) parent.getContext()).getWindowManager().getDefaultDisplay().getWidth();
+
         return vh;
     }
 
@@ -50,13 +60,23 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
         holder.playerNameTv.setText(p.getName());
         holder.scoreTv.setText("" + p.getScore());
         holder.itemView.setBackgroundColor(p.getColor());
+
+        TableLayout.LayoutParams params = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / getItemCount());
+
+        if (position == getItemCount() - 1) {
+            int heightUsed = (getItemCount() - 1) * height / getItemCount();
+            params = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height - heightUsed);
+
+        }
+
+        holder.itemView.setLayoutParams(params);
+
     }
 
     @Override
     public int getItemCount() {
         return players.size();
     }
-
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         @BindView(R.id.player_name_textView)
