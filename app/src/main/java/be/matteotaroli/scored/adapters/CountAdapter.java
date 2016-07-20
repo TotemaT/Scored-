@@ -61,13 +61,7 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
         holder.scoreTv.setText("" + p.getScore());
         holder.itemView.setBackgroundColor(p.getColor());
 
-        TableLayout.LayoutParams params = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / getItemCount());
-
-        if (position == getItemCount() - 1) {
-            int heightUsed = (getItemCount() - 1) * height / getItemCount();
-            params = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height - heightUsed);
-
-        }
+        TableLayout.LayoutParams params = getLayoutParams(position);
 
         holder.itemView.setLayoutParams(params);
 
@@ -76,6 +70,21 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return players.size();
+    }
+
+    private TableLayout.LayoutParams getLayoutParams(int position) {
+
+        switch (getItemCount()) {
+            case 1:
+            case 2:
+                return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            case 4:
+            case 6:
+            case 8:
+                return new TableLayout.LayoutParams(width / 2, height / (getItemCount() / 2));
+            default:
+                return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / getItemCount());
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {

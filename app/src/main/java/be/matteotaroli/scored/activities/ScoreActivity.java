@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
 
@@ -47,7 +48,19 @@ public class ScoreActivity extends AppCompatActivity implements RecyclerItemClic
 
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        switch (players.size()) {
+            case 2:
+            case 4:
+            case 6:
+            case 8:
+                recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+                break;
+            default:
+                recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        }
+
         adapter = new CountAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
 
