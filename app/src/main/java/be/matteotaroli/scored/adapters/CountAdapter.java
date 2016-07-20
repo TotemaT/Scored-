@@ -81,9 +81,19 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
             case 4:
             case 6:
             case 8:
-                return new TableLayout.LayoutParams(width / 2, height / (getItemCount() / 2));
+                if (position == getItemCount() - 1 || position == getItemCount() - 2) {
+                    int heightUsed = (getItemCount() / 2 - 1) * (height / (getItemCount() / 2));
+                    return new TableLayout.LayoutParams(width / 2, height - heightUsed);
+                } else {
+                    return new TableLayout.LayoutParams(width / 2, height / (getItemCount() / 2));
+                }
             default:
-                return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / getItemCount());
+                if (position == getItemCount() - 1) {
+                    int heightUsed = (getItemCount() - 1) * (height / getItemCount());
+                    return new TableLayout.LayoutParams(width / 2, height - heightUsed);
+                } else {
+                    return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / getItemCount());
+                }
         }
     }
 
