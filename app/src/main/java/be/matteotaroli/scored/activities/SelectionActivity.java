@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package be.matteotaroli.scored.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
@@ -56,8 +57,8 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
     RecyclerView recyclerView;
 
     private RecyclerView.Adapter adapter;
-
     private ArrayList<Player> players;
+    private int[] colors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,8 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
         }
         adapter = new PlayerAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
+
+        colors = getResources().getIntArray(R.array.palette);
     }
 
     @Override
@@ -102,7 +105,8 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
         if (players.size() == 8) {
             Toast.makeText(this, R.string.maximum_players_toast, Toast.LENGTH_SHORT).show();
         } else {
-            players.add(new Player());
+            Player p = new Player(colors[players.size()]);
+            players.add(p);
             adapter.notifyDataSetChanged();
         }
         Log.d(TAG, "Add new player");

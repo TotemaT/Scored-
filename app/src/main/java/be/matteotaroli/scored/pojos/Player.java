@@ -28,9 +28,9 @@ public class Player implements Parcelable {
     private int score;
     private int color;
 
-    public Player() {
+    public Player(int color) {
         this.name = "";
-        this.color = -11751600;
+        this.color = color;
         this.score = 0;
     }
 
