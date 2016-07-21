@@ -26,12 +26,10 @@ import butterknife.ButterKnife;
 
 public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder> {
 
-    private static final String TAG = "PlayerAdapter";
-
     private List<Player> players;
 
-    private RecyclerRemoveItemListener removeListener;
-    private ColorPickedListener colorPickedListener;
+    private final RecyclerRemoveItemListener removeListener;
+    private final ColorPickedListener colorPickedListener;
 
     public PlayerAdapter(List<Player> players, RecyclerRemoveItemListener removeListener, ColorPickedListener colorPickedListener) {
         this.players = players;
@@ -42,8 +40,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_player, parent, false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override

@@ -37,11 +37,10 @@ public class ScoreActivity extends AppCompatActivity implements RecyclerItemClic
 
         if (savedInstanceState == null) {
             Intent i = getIntent();
-            if (i == null) {
-                finish();
-            }
+            if (i != null)
+                players = i.getParcelableArrayListExtra(getString(R.string.extra_players));
+            else finish();
 
-            players = i.getParcelableArrayListExtra(getString(R.string.extra_players));
         } else {
             players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
         }

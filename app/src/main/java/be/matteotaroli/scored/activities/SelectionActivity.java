@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.thebluealliance.spectrum.SpectrumDialog;
 
@@ -67,7 +68,7 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
     }
 
     @OnClick(R.id.start_btn)
-    public void Start() {
+    void Start() {
         Log.d(TAG, "Start counting");
         if (players.size() == 0) return;
 
@@ -79,9 +80,9 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
     }
 
     @OnClick(R.id.add_player_fab)
-    public void AddNewPlayer() {
+    void AddNewPlayer() {
         if (players.size() == 8) {
-            //show dialog " max 8 players "
+            Toast.makeText(this, R.string.maximum_players_toast, Toast.LENGTH_SHORT).show();
         } else {
             players.add(new Player());
             adapter.notifyDataSetChanged();
