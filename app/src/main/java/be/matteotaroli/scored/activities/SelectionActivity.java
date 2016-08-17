@@ -67,6 +67,8 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
 
         ButterKnife.bind(this);
 
+        colors = getResources().getIntArray(R.array.palette);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -74,11 +76,10 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
             players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
         } else {
             players = new ArrayList<>(8);
+            players.add(new Player(colors[0]));
         }
         adapter = new PlayerAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
-
-        colors = getResources().getIntArray(R.array.palette);
     }
 
     @Override
@@ -107,11 +108,8 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
         } else {
             Player p = new Player(colors[players.size()]);
             players.add(p);
-            adapter.notifyDataSetChanged();
+            adapter.notifyItemInserted(players.size() - 1);
         }
-        Log.d(TAG, "Add new player");
-
-        Log.d(TAG, "Player list : " + players.toString());
     }
 
     @Override
