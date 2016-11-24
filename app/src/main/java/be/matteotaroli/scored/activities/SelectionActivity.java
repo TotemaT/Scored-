@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package be.matteotaroli.scored.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -29,6 +30,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -108,8 +110,13 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
             return;
         }
 
-        Intent i = new Intent(SelectionActivity.this, ScoreActivity.class);
+        /* Force close the keyboard if opened, avoid issues with the next activity not being able to go full screen. */
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
 
+        Intent i = new Intent(SelectionActivity.this, ScoreActivity.class);
         i.putParcelableArrayListExtra(getString(R.string.extra_players), players);
         startActivity(i);
     }
