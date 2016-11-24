@@ -4,8 +4,9 @@
     <string name="player_list">Players list</string>
     <string name="remove_item">Remove item</string>
     <string name="player_name_hint">Player\'s name</string>
+    <string name="maximum_players_toast">You cannot add more than 8 players :(</string>
+    <string name="minimum_players_toast">You need at least 1 player to start ;)</string>
 
     <string name="extra_players" translatable="false">extra_players</string>
     <string name="players_key" translatable="false">players_key</string>
-    <string name="maximum_players_toast">Maximum 8 players</string>
 </resources>

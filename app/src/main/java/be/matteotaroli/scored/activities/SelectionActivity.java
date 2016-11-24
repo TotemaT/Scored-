@@ -102,13 +102,15 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
 
     @OnClick(R.id.start_btn)
     void Start() {
-        Log.d(TAG, "Start counting");
-        if (players.size() == 0) return;
+        Log.d(TAG, "Launching ScoreActivity");
+        if (players.size() == 0) {
+            Toast.makeText(this, R.string.minimum_players_toast, Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Intent i = new Intent(SelectionActivity.this, ScoreActivity.class);
 
         i.putParcelableArrayListExtra(getString(R.string.extra_players), players);
-
         startActivity(i);
     }
 
