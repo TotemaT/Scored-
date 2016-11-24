@@ -64,8 +64,14 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
 
         holder.colorButton.getBackground().setColorFilter(p.getColor(), PorterDuff.Mode.SRC_ATOP);
 
-        if (position == getItemCount()) holder.divider.setVisibility(View.INVISIBLE);
-        else holder.divider.setVisibility(View.VISIBLE);
+        if (position == getItemCount()){
+            holder.divider.setVisibility(View.INVISIBLE);
+            holder.removeBtn.setVisibility(View.INVISIBLE);
+        }
+        else {
+            holder.divider.setVisibility(View.VISIBLE);
+            holder.removeBtn.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
