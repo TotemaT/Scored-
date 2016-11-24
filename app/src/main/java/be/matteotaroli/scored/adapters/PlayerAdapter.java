@@ -64,12 +64,10 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
 
         holder.colorButton.getBackground().setColorFilter(p.getColor(), PorterDuff.Mode.SRC_ATOP);
 
-        if (position == getItemCount()){
-            holder.divider.setVisibility(View.INVISIBLE);
+        if (position == 0){
             holder.removeBtn.setVisibility(View.INVISIBLE);
         }
         else {
-            holder.divider.setVisibility(View.VISIBLE);
             holder.removeBtn.setVisibility(View.VISIBLE);
         }
     }
@@ -87,9 +85,6 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         EditText playerNameEt;
         @BindView(R.id.remove_btn)
         ImageButton removeBtn;
-
-        @BindView(R.id.divider)
-        View divider;
 
         ViewHolder(View itemView) {
             super(itemView);
