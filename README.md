@@ -1,13 +1,18 @@
+<div align="center">
+	<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
+</div>
 #Scored! ![License GPL3](https://img.shields.io/github/license/Crapoo/scored-.svg)
-> Keep count of everything!
+> _Count everything !_
 
-Scored! allows players to keep track of their score during a game. Can also be used to keep count of anything else.
+***Scored!*** is primarily meant to help keep each player's score while playing board games. Besides that, it can be used to keep count of anything at all.
 
 ##How to use
 
-- Add any number of players
+- Add up to 8 players
 - Choose a colour and name for each player
-- Simply tap on the player's tile to increment their score
+- Click on start
+- To increment a player's score, simply click on their tile
+- To decrement a player's score, long click on their tile
 
 ##License
     Copyright (C) 2016  Matteo Taroli
