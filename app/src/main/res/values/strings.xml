@@ -9,4 +9,13 @@
 
     <string name="extra_players" translatable="false">extra_players</string>
     <string name="players_key" translatable="false">players_key</string>
+    <string name="pref_first_time_selection_activity">pref_first_time_selection_activity</string>
+    <string name="pref_first_time_score_activity">pref_first_time_score_activity</string>
+
+    <string name="hint_player_title">Set your players</string>
+    <string name="hint_player_body">Enter the names of the players and give them each a colour to easily distinguish them!</string>
+    <string name="hint_add_player_title">Add players</string>
+    <string name="hint_add_player_body">Add up to 8 players by clicking here !</string>
+    <string name="hint_start_title">Start counting</string>
+    <string name="hint_start_body">Once everyting is set up, click here to start counting !</string>
 </resources>

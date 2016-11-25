@@ -20,12 +20,12 @@ package be.matteotaroli.scored.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.ColorInt;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -34,6 +34,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.joanfuentes.hintcase.HintCase;
 import com.thebluealliance.spectrum.SpectrumDialog;
 
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectionActivity extends AppCompatActivity implements ColorPickedListener, RecyclerRemoveItemListener {
+public class SelectionActivity extends ActivityWithHints implements ColorPickedListener, RecyclerRemoveItemListener {
 
     private final static String TAG = "SelectionActivity";
 
@@ -82,7 +83,8 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
         }
         adapter = new PlayerAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
-        
+
+        showHints();
     }
 
     @Override
@@ -149,5 +151,56 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
     public void onItemRemoved(View v, int position) {
         players.remove(position);
         adapter.notifyDataSetChanged();
+    }
+
+    private void showHints() {
+/*        String firstTimeKey = getResources().getString(R.string.pref_first_time_selection_activity);
+        if (! getPreferences(MODE_PRIVATE).getBoolean(firstTimeKey, true)) {
+            return;
+        }
+        getPreferences(MODE_PRIVATE).edit().putBoolean(firstTimeKey, false).apply();*/
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showPlayerHint();
+            }
+        }, 500);
+    }
+
+    private void showPlayerHint() {
+        Resources res = getResources();
+        View view = recyclerView.getChildAt(0);
+        String title = res.getString(R.string.hint_player_title),
+                body = res.getString(R.string.hint_player_body);
+        HintCase.OnClosedListener listener = new HintCase.OnClosedListener() {
+            @Override
+            public void onClosed() {
+                showAddPlayerHint();
+            }
+        };
+        showRectangularHint(view, title, body, listener);
+    }
+
+    private void showAddPlayerHint() {
+        Resources res = getResources();
+        View view = addPlayerFab;
+        String title = res.getString(R.string.hint_add_player_title),
+                body = res.getString(R.string.hint_add_player_body);
+        HintCase.OnClosedListener listener = new HintCase.OnClosedListener() {
+            @Override
+            public void onClosed() {
+                showStartHint();
+            }
+        };
+        showCircularHint(view, title, body, listener);
+    }
+
+    private void showStartHint() {
+        Resources res = getResources();
+        View view = startBtn;
+        String title = res.getString(R.string.hint_start_title),
+                body = res.getString(R.string.hint_start_body);
+        showCircularHint(view, title, body, null);
     }
 }
