@@ -82,17 +82,7 @@ public class SelectionActivity extends AppCompatActivity implements ColorPickedL
         }
         adapter = new PlayerAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
-        recyclerView.addOnChildAttachStateChangeListener(new RecyclerView.OnChildAttachStateChangeListener() {
-            @Override
-            public void onChildViewAttachedToWindow(View view) {
-                view.findViewById(R.id.player_name_editText).requestFocus();
-            }
-
-            @Override
-            public void onChildViewDetachedFromWindow(View view) {
-
-            }
-        });
+        
     }
 
     @Override
