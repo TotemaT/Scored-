@@ -17,4 +17,6 @@
     <dimen name="toolbar_padding">16dp</dimen>
     <dimen name="toolbar_title_size">18sp</dimen>
     <dimen name="toolbar_title_margin">16dp</dimen>
+
+    <dimen name="hint_margin">42dp</dimen>
 </resources>

@@ -19,7 +19,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package be.matteotaroli.scored.activities;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,7 +39,7 @@ import be.matteotaroli.scored.pojos.Player;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ScoreActivity extends AppCompatActivity implements RecyclerItemClickListener, RecyclerItemLongClickListener {
+public class ScoreActivity extends ActivityWithHints implements RecyclerItemClickListener, RecyclerItemLongClickListener {
 
     @BindView(R.id.recyclerview)
     RecyclerView recyclerView;
@@ -66,16 +68,10 @@ public class ScoreActivity extends AppCompatActivity implements RecyclerItemClic
 
         recyclerView.setHasFixedSize(true);
 
-        switch (players.size()) {
-            case 2:
-            case 4:
-            case 6:
-            case 8:
-                recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-                break;
-            default:
-                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        if (players.size() % 2 == 0) {
+            recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        } else {
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }
 
         adapter = new CountAdapter(players, this, this);
@@ -84,6 +80,8 @@ public class ScoreActivity extends AppCompatActivity implements RecyclerItemClic
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
+
+        showHints();
     }
 
     @Override
@@ -108,4 +106,28 @@ public class ScoreActivity extends AppCompatActivity implements RecyclerItemClic
         p.decrementScore();
         adapter.notifyDataSetChanged();
     }
+
+    private void showHints() {
+/*        String firstTimeKey = getResources().getString(R.string.pref_first_time_score_activity);
+        if (!getPreferences(MODE_PRIVATE).getBoolean(firstTimeKey, true)) {
+            return;
+        }
+        getPreferences(MODE_PRIVATE).edit().putBoolean(firstTimeKey, false).apply();*/
+        startShowingHints(new Runnable() {
+            @Override
+            public void run() {
+                showPlayerTileHint();
+            }
+        });
+    }
+
+    private void showPlayerTileHint() {
+        Resources res = getResources();
+        View view = recyclerView.getChildAt(0);
+        String title = res.getString(R.string.hint_player_tile_title),
+                body = res.getString(R.string.hint_player_tile_body);
+
+        showRectangularHint(view, title, body, null);
+    }
+
 }

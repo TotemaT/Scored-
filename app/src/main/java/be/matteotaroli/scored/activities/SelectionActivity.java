@@ -104,7 +104,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickedL
 
         /* Force close the keyboard if opened, avoid issues with the next activity not being able to go full screen. */
         if (getCurrentFocus() != null) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
 
@@ -155,17 +155,17 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickedL
 
     private void showHints() {
 /*        String firstTimeKey = getResources().getString(R.string.pref_first_time_selection_activity);
-        if (! getPreferences(MODE_PRIVATE).getBoolean(firstTimeKey, true)) {
+        if (!getPreferences(MODE_PRIVATE).getBoolean(firstTimeKey, true)) {
             return;
         }
         getPreferences(MODE_PRIVATE).edit().putBoolean(firstTimeKey, false).apply();*/
 
-        new Handler().postDelayed(new Runnable() {
+        startShowingHints(new Runnable() {
             @Override
             public void run() {
                 showPlayerHint();
             }
-        }, 500);
+        });
     }
 
     private void showPlayerHint() {

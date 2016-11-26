@@ -18,4 +18,6 @@
     <string name="hint_add_player_body">Add up to 8 players by clicking here !</string>
     <string name="hint_start_title">Start counting</string>
     <string name="hint_start_body">Once everyting is set up, click here to start counting !</string>
+    <string name="hint_player_tile_title">Start counting</string>
+    <string name="hint_player_tile_body">It\'s time to count ! To increment the score, tap once on a player\'s tile. To decrement, tap and hold on the tile.</string>
 </resources>
