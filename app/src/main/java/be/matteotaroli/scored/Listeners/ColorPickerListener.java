@@ -20,6 +20,20 @@ package be.matteotaroli.scored.Listeners;
 
 import android.view.View;
 
-public interface ColorPickedListener {
-    void onColorPicked(View v, int position, int color);
+import com.thebluealliance.spectrum.SpectrumDialog;
+
+import be.matteotaroli.scored.pojos.Player;
+
+/**
+ * Interface that manages the color picker.
+ */
+public interface ColorPickerListener {
+    /**
+     * Callback used when the user wants to open the {@link SpectrumDialog}.
+     *
+     * @param v        View from which the user called to open the {@link SpectrumDialog}.
+     * @param position Position of the {@link Player} in the list of {@link Player}
+     * @param color    Current color of the {@link Player}.
+     */
+    void onColorPickerOpen(View v, int position, int color);
 }

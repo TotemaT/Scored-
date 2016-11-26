@@ -20,6 +20,15 @@ package be.matteotaroli.scored.Listeners;
 
 import android.view.View;
 
+/**
+ * Interface that handles click on any RecyclerView item.
+ */
 public interface RecyclerItemClickListener {
+    /**
+     * Handles a click on a given item.
+     *
+     * @param v        View on which the user clicked.
+     * @param position The position of the item in the list of items.
+     */
     void onClick(View v, int position);
 }

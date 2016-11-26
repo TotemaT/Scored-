@@ -36,6 +36,9 @@ import be.matteotaroli.scored.pojos.Player;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Adapter for the RecyclerView that contains the players' score.
+ */
 public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> {
 
     private List<Player> players;

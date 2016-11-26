@@ -21,7 +21,9 @@ package be.matteotaroli.scored.pojos;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-// Parcelable implemented thanks to http://www.parcelabler.com
+/**
+ * Class representing a player.
+ */
 public class Player implements Parcelable {
 
     private String name;

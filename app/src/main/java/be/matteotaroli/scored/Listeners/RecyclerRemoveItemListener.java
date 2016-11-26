@@ -20,6 +20,15 @@ package be.matteotaroli.scored.Listeners;
 
 import android.view.View;
 
+/**
+ * Interface that handles the removing of any RecyclerView item.
+ */
 public interface RecyclerRemoveItemListener {
+    /**
+     * Handles the removing of any given item.
+     *
+     * @param v        The view that is to be removed.
+     * @param position The position of the item in the list of items.
+     */
     void onItemRemoved(View v, int position);
 }

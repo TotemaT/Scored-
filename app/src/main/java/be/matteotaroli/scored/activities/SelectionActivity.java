@@ -23,7 +23,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.ColorInt;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,7 +38,7 @@ import com.thebluealliance.spectrum.SpectrumDialog;
 
 import java.util.ArrayList;
 
-import be.matteotaroli.scored.Listeners.ColorPickedListener;
+import be.matteotaroli.scored.Listeners.ColorPickerListener;
 import be.matteotaroli.scored.Listeners.RecyclerRemoveItemListener;
 import be.matteotaroli.scored.R;
 import be.matteotaroli.scored.adapters.PlayerAdapter;
@@ -48,7 +47,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectionActivity extends ActivityWithHints implements ColorPickedListener, RecyclerRemoveItemListener {
+/**
+ * Activity that allows the user to manage players.
+ */
+public class SelectionActivity extends ActivityWithHints implements ColorPickerListener, RecyclerRemoveItemListener {
 
     private final static String TAG = "SelectionActivity";
 
@@ -102,11 +104,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickedL
             return;
         }
 
-        /* Force close the keyboard if opened, avoid issues with the next activity not being able to go full screen. */
-        if (getCurrentFocus() != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        }
+        hideSoftKeyboard();
 
         Intent i = new Intent(SelectionActivity.this, ScoreActivity.class);
         i.putParcelableArrayListExtra(getString(R.string.extra_players), players);
@@ -125,7 +123,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickedL
     }
 
     @Override
-    public void onColorPicked(final View v, final int position, int color) {
+    public void onColorPickerOpen(final View v, final int position, int color) {
 
         Log.d(TAG, "v = " + v.getClass().getSimpleName());
 
@@ -196,6 +194,13 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickedL
         showCircularHint(view, title, body, listener);
     }
 
+    private void hideSoftKeyboard() {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+
     private void showStartHint() {
         Resources res = getResources();
         View view = startBtn;
@@ -203,4 +208,5 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickedL
                 body = res.getString(R.string.hint_start_body);
         showCircularHint(view, title, body, null);
     }
+
 }

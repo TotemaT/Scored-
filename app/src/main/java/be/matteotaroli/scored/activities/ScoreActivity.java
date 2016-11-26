@@ -39,6 +39,9 @@ import be.matteotaroli.scored.pojos.Player;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Activity that allows the user to manage players' score.
+ */
 public class ScoreActivity extends ActivityWithHints implements RecyclerItemClickListener, RecyclerItemLongClickListener {
 
     @BindView(R.id.recyclerview)

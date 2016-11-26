@@ -31,24 +31,27 @@ import android.widget.ImageButton;
 
 import java.util.List;
 
-import be.matteotaroli.scored.Listeners.ColorPickedListener;
+import be.matteotaroli.scored.Listeners.ColorPickerListener;
 import be.matteotaroli.scored.Listeners.RecyclerRemoveItemListener;
 import be.matteotaroli.scored.R;
 import be.matteotaroli.scored.pojos.Player;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Adapter for the RecyclerView that contains {@link Player}.
+ */
 public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder> {
 
     private List<Player> players;
 
     private final RecyclerRemoveItemListener removeListener;
-    private final ColorPickedListener colorPickedListener;
+    private final ColorPickerListener colorPickerListener;
 
-    public PlayerAdapter(List<Player> players, RecyclerRemoveItemListener removeListener, ColorPickedListener colorPickedListener) {
+    public PlayerAdapter(List<Player> players, RecyclerRemoveItemListener removeListener, ColorPickerListener colorPickerListener) {
         this.players = players;
         this.removeListener = removeListener;
-        this.colorPickedListener = colorPickedListener;
+        this.colorPickerListener = colorPickerListener;
     }
 
     @Override
@@ -109,7 +112,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
             colorButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View view) {
-                    colorPickedListener.onColorPicked(view, getAdapterPosition(), players.get(getAdapterPosition()).getColor());
+                    colorPickerListener.onColorPickerOpen(view, getAdapterPosition(), players.get(getAdapterPosition()).getColor());
                 }
             });
         }
