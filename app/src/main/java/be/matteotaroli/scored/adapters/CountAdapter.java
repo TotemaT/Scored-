@@ -68,14 +68,16 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Player p = players.get(position);
-        holder.playerNameTv.setText(p.getName());
+        if (p.getName().isEmpty()) {
+            holder.playerNameTv.setVisibility(View.GONE);
+        } else {
+            holder.playerNameTv.setText(p.getName());
+        }
         holder.scoreTv.setText(String.format(Locale.US, "%d", p.getScore()));
         holder.itemView.setBackgroundColor(p.getColor());
 
         TableLayout.LayoutParams params = getLayoutParams(position);
-
         holder.itemView.setLayoutParams(params);
-
     }
 
     @Override
@@ -84,27 +86,23 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
     }
 
     private TableLayout.LayoutParams getLayoutParams(int position) {
-
-        switch (getItemCount()) {
-            case 1:
-            case 2:
-                return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            case 4:
-            case 6:
-            case 8:
-                if (position == getItemCount() - 1 || position == getItemCount() - 2) {
-                    int heightUsed = (getItemCount() / 2 - 1) * (height / (getItemCount() / 2));
-                    return new TableLayout.LayoutParams(width / 2, height - heightUsed);
-                } else {
-                    return new TableLayout.LayoutParams(width / 2, height / (getItemCount() / 2));
-                }
-            default:
-                if (position == getItemCount() - 1) {
-                    int heightUsed = (getItemCount() - 1) * (height / getItemCount());
-                    return new TableLayout.LayoutParams(width / 2, height - heightUsed);
-                } else {
-                    return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / getItemCount());
-                }
+        int itemCount = getItemCount();
+        if (itemCount <= 2) {
+            return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        } else if (itemCount % 2 == 0) {
+            if (position == getItemCount() - 1 || position == getItemCount() - 2) {
+                int heightUsed = (getItemCount() / 2 - 1) * (height / (getItemCount() / 2));
+                return new TableLayout.LayoutParams(width / 2, height - heightUsed);
+            } else {
+                return new TableLayout.LayoutParams(width / 2, height / (getItemCount() / 2));
+            }
+        } else {
+            if (position == getItemCount() - 1) {
+                int heightUsed = (getItemCount() - 1) * (height / getItemCount());
+                return new TableLayout.LayoutParams(width / 2, height - heightUsed);
+            } else {
+                return new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / getItemCount());
+            }
         }
     }
 
