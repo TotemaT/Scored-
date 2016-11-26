@@ -95,7 +95,6 @@ public class ScoreActivity extends ActivityWithHints implements RecyclerItemClic
 
     @Override
     public void onClick(View v, int position) {
-        Log.d("lol", "Clicked : " + players.toString());
         Player p = players.get(position);
         p.incrementScore();
         adapter.notifyDataSetChanged();
@@ -103,8 +102,6 @@ public class ScoreActivity extends ActivityWithHints implements RecyclerItemClic
 
     @Override
     public void onLongClick(View v, int position) {
-        Log.d("lol", "Clicked long : " + players.toString());
-
         Player p = players.get(position);
         p.decrementScore();
         adapter.notifyDataSetChanged();

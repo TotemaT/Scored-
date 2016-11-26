@@ -97,7 +97,6 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
 
     @OnClick(R.id.start_btn)
     void Start() {
-        Log.d(TAG, "Launching ScoreActivity");
         if (players.size() == 0) {
             Toast.makeText(this, R.string.minimum_players_toast, Toast.LENGTH_SHORT).show();
             return;
@@ -123,9 +122,6 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
 
     @Override
     public void onColorPickerOpen(final View v, final int position, int color) {
-
-        Log.d(TAG, "v = " + v.getClass().getSimpleName());
-
         new SpectrumDialog.Builder(this)
                 .setTitle("Choose a color")
                 .setColors(R.array.palette)

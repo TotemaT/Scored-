@@ -41,12 +41,11 @@ import butterknife.ButterKnife;
  */
 public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> {
 
+    private final RecyclerItemClickListener clickListener;
+    private final RecyclerItemLongClickListener longClickListener;
     private List<Player> players;
     private int height;
     private int width;
-
-    private final RecyclerItemClickListener clickListener;
-    private final RecyclerItemLongClickListener longClickListener;
 
     public CountAdapter(List<Player> players, RecyclerItemClickListener clickListener, RecyclerItemLongClickListener longClickListener) {
         this.players = players;
