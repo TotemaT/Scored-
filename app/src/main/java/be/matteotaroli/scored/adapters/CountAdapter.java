@@ -67,10 +67,11 @@ public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Player p = players.get(position);
+        holder.playerNameTv.setText(p.getName());
         if (p.getName().isEmpty()) {
             holder.playerNameTv.setVisibility(View.GONE);
         } else {
-            holder.playerNameTv.setText(p.getName());
+            holder.playerNameTv.setVisibility(View.VISIBLE);
         }
         holder.scoreTv.setText(String.format(Locale.US, "%d", p.getScore()));
         holder.itemView.setBackgroundColor(p.getColor());
