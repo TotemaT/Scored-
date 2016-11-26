@@ -117,7 +117,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
         } else {
             Player p = new Player(colors[players.size()]);
             players.add(p);
-            adapter.notifyItemInserted(players.size() - 1);
+            adapter.notifyDataSetChanged();
         }
     }
 

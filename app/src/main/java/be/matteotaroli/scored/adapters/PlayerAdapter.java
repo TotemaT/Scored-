@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package be.matteotaroli.scored.adapters;
 
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -72,7 +73,20 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         } else {
             holder.removeBtn.setVisibility(View.VISIBLE);
         }
+        if (position + 1 == getItemCount()) {
+            setBottomMargin(holder.itemView, (int) (72 * Resources.getSystem().getDisplayMetrics().density));
+        } else {
+            setBottomMargin(holder.itemView, 0);
+        }
         holder.colorButton.requestFocus();
+    }
+
+    private static void setBottomMargin(View view, int bottomMargin) {
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            params.setMargins(params.leftMargin, params.topMargin, params.rightMargin, bottomMargin);
+            view.requestLayout();
+        }
     }
 
     @Override
