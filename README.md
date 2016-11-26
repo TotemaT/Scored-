@@ -1,7 +1,7 @@
 <div align="center">
 	<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
 </div>
-#Scored! ![License GPL3](https://img.shields.io/github/license/Crapoo/scored-.svg)
+#Scored! ![License GPL3](https://img.shields.io/github/license/TotemaT/scored-.svg)
 > _Count everything !_
 
 ***Scored!*** is primarily meant to help keep each player's score while playing board games. Besides that, it can be used to keep count of anything at all.
