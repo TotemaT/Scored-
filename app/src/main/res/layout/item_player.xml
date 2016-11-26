@@ -23,7 +23,10 @@
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:gravity="center_vertical|start"
-        android:hint="@string/player_name_hint"/>
+        android:hint="@string/player_name_hint">
+
+        <requestFocus/>
+    </EditText>
 
     <ImageButton
         android:id="@+id/remove_btn"
@@ -35,5 +38,5 @@
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/remove_item"
         android:src="@drawable/ic_remove"/>
-    
+
 </LinearLayout>

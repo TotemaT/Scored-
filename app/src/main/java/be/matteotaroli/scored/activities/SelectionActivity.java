@@ -85,7 +85,6 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
         }
         adapter = new PlayerAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
-
         showHints();
     }
 

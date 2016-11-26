@@ -10,7 +10,8 @@
             android:name=".activities.ScoreActivity"/>
 
         <activity
-            android:name=".activities.SelectionActivity">
+            android:name=".activities.SelectionActivity"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

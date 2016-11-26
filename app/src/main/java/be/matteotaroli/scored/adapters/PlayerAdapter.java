@@ -67,12 +67,12 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
 
         holder.colorButton.getBackground().setColorFilter(p.getColor(), PorterDuff.Mode.SRC_ATOP);
 
-        if (position == 0){
+        if (position == 0) {
             holder.removeBtn.setVisibility(View.INVISIBLE);
-        }
-        else {
+        } else {
             holder.removeBtn.setVisibility(View.VISIBLE);
         }
+        holder.colorButton.requestFocus();
     }
 
     @Override
@@ -116,6 +116,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
                 }
             });
         }
+
         void addTextChangedListener() {
             playerNameEt.addTextChangedListener(new TextWatcher() {
                 @Override
