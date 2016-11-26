@@ -74,11 +74,11 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
             holder.removeBtn.setVisibility(View.VISIBLE);
         }
         if (position + 1 == getItemCount()) {
+            holder.playerNameEt.requestFocus();
             setBottomMargin(holder.itemView, (int) (72 * Resources.getSystem().getDisplayMetrics().density));
         } else {
             setBottomMargin(holder.itemView, 0);
         }
-        holder.colorButton.requestFocus();
     }
 
     private static void setBottomMargin(View view, int bottomMargin) {
