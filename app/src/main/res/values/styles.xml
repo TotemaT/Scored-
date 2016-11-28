@@ -9,8 +9,8 @@
     </style>
 
     <style name="hint_title_style">
-        <item name="android:textColor">@color/accent</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">35sp</item>
     </style>
 
     <style name="hint_body_style">
