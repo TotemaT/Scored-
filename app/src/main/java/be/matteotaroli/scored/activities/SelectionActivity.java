@@ -27,7 +27,6 @@ import android.support.annotation.ColorInt;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -63,7 +62,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
 
     private RecyclerView.Adapter adapter;
     private ArrayList<Player> players;
-    private int[] colors;
+    private int[] palette;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +71,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
 
         ButterKnife.bind(this);
 
-        colors = getResources().getIntArray(R.array.palette);
+        palette = getResources().getIntArray(R.array.palette);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -81,7 +80,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
             players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
         } else {
             players = new ArrayList<>(8);
-            players.add(new Player(colors[0]));
+            players.add(new Player(palette[0]));
         }
         adapter = new PlayerAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
@@ -114,7 +113,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
         if (players.size() == 8) {
             Toast.makeText(this, R.string.maximum_players_toast, Toast.LENGTH_SHORT).show();
         } else {
-            Player p = new Player(colors[players.size()]);
+            Player p = new Player(palette[players.size()]);
             players.add(p);
             adapter.notifyDataSetChanged();
         }
@@ -127,7 +126,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
                 .setColors(R.array.palette)
                 .setSelectedColor(color)
                 .setDismissOnColorSelected(true)
-                .setFixedColumnCount(4)
+                .setFixedColumnCount(5)
                 .setOnColorSelectedListener(new SpectrumDialog.OnColorSelectedListener() {
                     @Override
                     public void onColorSelected(boolean positiveResult, @ColorInt int color) {
