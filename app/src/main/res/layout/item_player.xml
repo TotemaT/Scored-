@@ -23,7 +23,8 @@
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:gravity="center_vertical|start"
-        android:hint="@string/player_name_hint"/>
+        android:hint="@string/player_name_hint"
+        android:inputType="textPersonName|textCapWords"/>
 
     <ImageButton
         android:id="@+id/remove_btn"
