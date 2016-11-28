@@ -66,7 +66,7 @@ public abstract class ActivityWithHints extends AppCompatActivity {
         HintContentHolder contentHolder = getContentHolder(view, title, body);
 
         new HintCase(view.getRootView())
-                .setTarget(view, new RectangularShape())
+                .setTarget(view, new RectangularShape(), HintCase.TARGET_IS_NOT_CLICKABLE)
                 .setShapeAnimators(new RevealRectangularShapeAnimator(), new UnrevealRectangularShapeAnimator())
                 .setHintBlock(contentHolder)
                 .setOnClosedListener(listener)
@@ -86,7 +86,7 @@ public abstract class ActivityWithHints extends AppCompatActivity {
         HintContentHolder contentHolder = getContentHolder(view, title, body);
 
         new HintCase(view.getRootView())
-                .setTarget(view, new CircularShape())
+                .setTarget(view, new CircularShape(), HintCase.TARGET_IS_NOT_CLICKABLE)
                 .setShapeAnimators(new RevealCircleShapeAnimator(), new UnrevealCircleShapeAnimator())
                 .setHintBlock(contentHolder)
                 .setOnClosedListener(listener)
