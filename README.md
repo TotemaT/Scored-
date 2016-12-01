@@ -14,6 +14,10 @@
 - To increment a player's score, simply click on their tile
 - To decrement a player's score, long click on their tile
 
+##Thanks
+- **[Jennifer Hall](https://www.instagram.com/yourcottonmouth/)** for the logo and German translation
+- **[Przemek Gasinski](https://github.com/Soofe)** for the Polish translation
+
 ##License
     Copyright (C) 2016  Matteo Taroli
     
