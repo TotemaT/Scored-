@@ -1,22 +1,24 @@
 <resources>
     <string name="app_name">Scored!</string>
+    
     <string name="start">Start</string>
-    <string name="remove_item">Remove item</string>
+    <string name="remove_item">Remove player</string>
     <string name="player_name_hint">Player\'s name</string>
-    <string name="maximum_players_toast">You cannot add more than 8 players :(</string>
+    <string name="maximum_players_toast">You can only add up to 8 players :(</string>
     <string name="minimum_players_toast">You need at least 1 player to start ;)</string>
+
+    <string name="hint_player_title">It all starts with one player</string>
+    <string name="hint_player_body">Here is the only player so far. Enter a name and choose a colour to easily recognize this player.</string>
+    <string name="hint_add_player_title">Now add some friends</string>
+    <string name="hint_add_player_body">Click here to add up to 8 players.</string>
+    <string name="hint_start_title">Let\'s start playing!</string>
+    <string name="hint_start_body">Once you\'re done setting the players up, click here and get ready to play !</string>
+    <string name="hint_player_tile_title">Now is the time</string>
+    <string name="hint_player_tile_body">It\'s now time to count! A simple tap on a tile will add 1 point to the player, a long tamp will remove 1 point. Have fun!</string>
 
     <string name="extra_players" translatable="false">extra_players</string>
     <string name="players_key" translatable="false">players_key</string>
-    <string name="pref_first_time_selection_activity">pref_first_time_selection_activity</string>
-    <string name="pref_first_time_score_activity">pref_first_time_score_activity</string>
+    <string name="pref_first_time_selection_activity" translatable="false">pref_first_time_selection_activity</string>
+    <string name="pref_first_time_score_activity" translatable="false">pref_first_time_score_activity</string>
 
-    <string name="hint_player_title">Set your players</string>
-    <string name="hint_player_body">Enter the names of the players and give them each a colour to easily distinguish them!</string>
-    <string name="hint_add_player_title">Add players</string>
-    <string name="hint_add_player_body">Add up to 8 players by clicking here !</string>
-    <string name="hint_start_title">Start counting</string>
-    <string name="hint_start_body">Once everyting is set up, click here to start counting !</string>
-    <string name="hint_player_tile_title">Start counting</string>
-    <string name="hint_player_tile_body">It\'s time to count ! To increment the score, tap once on a player\'s tile. To decrement, tap and hold on the tile.</string>
 </resources>
