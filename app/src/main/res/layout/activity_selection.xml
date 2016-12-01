@@ -58,6 +58,7 @@
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:splitMotionEvents="false"
             tools:listitem="@layout/item_player"/>
 
     </LinearLayout>
@@ -71,6 +72,5 @@
         android:src="@drawable/ic_add"
         app:fabSize="normal"
         app:layout_anchor="@id/recyclerview"
-        app:layout_anchorGravity="bottom|end"
-        />
+        app:layout_anchorGravity="bottom|end"/>
 </android.support.design.widget.CoordinatorLayout>
