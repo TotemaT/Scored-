@@ -16,7 +16,7 @@
 
 ##Thanks
 - **[Jennifer Hall](https://www.instagram.com/yourcottonmouth/)** for the logo and German translation
-- **[Przemek Gasinski](https://github.com/Soofe)** for the Polish translation
+- **[Przemek Gasinski](https://github.com/Soofe)** for testing and the Polish translation
 
 ##License
     Copyright (C) 2016  Matteo Taroli
