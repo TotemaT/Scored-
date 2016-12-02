@@ -21,12 +21,9 @@ package be.matteotaroli.scored.activities;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -108,11 +105,11 @@ public class ScoreActivity extends ActivityWithHints implements RecyclerItemClic
     }
 
     private void showHints() {
-/*        String firstTimeKey = getResources().getString(R.string.pref_first_time_score_activity);
+        String firstTimeKey = getResources().getString(R.string.pref_first_time_score_activity);
         if (!getPreferences(MODE_PRIVATE).getBoolean(firstTimeKey, true)) {
             return;
         }
-        getPreferences(MODE_PRIVATE).edit().putBoolean(firstTimeKey, false).apply();*/
+        getPreferences(MODE_PRIVATE).edit().putBoolean(firstTimeKey, false).apply();
         startShowingHints(new Runnable() {
             @Override
             public void run() {

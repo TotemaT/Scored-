@@ -146,11 +146,11 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
     }
 
     private void showHints() {
-/*        String firstTimeKey = getResources().getString(R.string.pref_first_time_selection_activity);
+        String firstTimeKey = getResources().getString(R.string.pref_first_time_selection_activity);
         if (!getPreferences(MODE_PRIVATE).getBoolean(firstTimeKey, true)) {
             return;
         }
-        getPreferences(MODE_PRIVATE).edit().putBoolean(firstTimeKey, false).apply();*/
+        getPreferences(MODE_PRIVATE).edit().putBoolean(firstTimeKey, false).apply();
 
         startShowingHints(new Runnable() {
             @Override
