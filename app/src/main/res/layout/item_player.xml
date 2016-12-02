@@ -18,8 +18,8 @@
         android:id="@+id/player_name_editText"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="@dimen/item_player_name_margin"
+        android:layout_marginStart="@dimen/item_player_name_margin"
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:gravity="center_vertical|start"
@@ -28,8 +28,8 @@
 
     <ImageButton
         android:id="@+id/remove_btn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/delete_button_size"
+        android:layout_height="@dimen/delete_button_size"
         android:layout_gravity="center_vertical|end"
         android:layout_marginEnd="@dimen/item_icon_margin"
         android:layout_marginRight="@dimen/item_icon_margin"

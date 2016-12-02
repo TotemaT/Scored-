@@ -18,5 +18,11 @@
     <dimen name="toolbar_title_size">18sp</dimen>
     <dimen name="toolbar_title_margin">16dp</dimen>
 
+    <!-- Hints dimensions -->
     <dimen name="hint_margin">42dp</dimen>
+    <dimen name="hint_title_size">35sp</dimen>
+    <dimen name="item_score_score_size">42sp</dimen>
+    <dimen name="item_score_name_size">20sp</dimen>
+    <dimen name="delete_button_size">48dp</dimen>
+    <dimen name="item_player_name_margin">16dp</dimen>
 </resources>

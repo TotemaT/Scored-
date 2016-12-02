@@ -18,7 +18,7 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="42sp"/>
+            android:textSize="@dimen/item_score_score_size"/>
 
         <TextView
             android:id="@+id/player_name_textView"
@@ -28,6 +28,6 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp"/>
+            android:textSize="@dimen/item_score_name_size"/>
     </RelativeLayout>
 </LinearLayout>
