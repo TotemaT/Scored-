@@ -12,9 +12,9 @@
     <string name="hint_add_player_title">Now add some friends</string>
     <string name="hint_add_player_body">Click here to add up to 8 players.</string>
     <string name="hint_start_title">Let\'s start playing!</string>
-    <string name="hint_start_body">Once you\'re done setting the players up, click here and get ready to play !</string>
+    <string name="hint_start_body">Once you\'re done setting the players up, click here and get ready to play!</string>
     <string name="hint_player_tile_title">Now is the time</string>
-    <string name="hint_player_tile_body">It\'s now time to count! A simple tap on a tile will add 1 point to the player, a long tamp will remove 1 point. Have fun!</string>
+    <string name="hint_player_tile_body">It\'s now time to count! A simple tap on a tile will add 1 point to the player, a long tap will remove 1 point. Have fun!</string>
 
     <string name="extra_players" translatable="false">extra_players</string>
     <string name="players_key" translatable="false">players_key</string>

@@ -3,8 +3,8 @@
     <string name="app_name">Scored!</string>
     <string name="hint_add_player_body">Clique ici pour ajouter jusqu\'à 8 joueurs.</string>
     <string name="hint_add_player_title">Ajoute des amis !</string>
-    <string name="hint_player_body">Il n\'y a qu\'un joueur pour le moment. Donne lui un nom et une couleur pour le reconnaitre facilement !</string>
-    <string name="hint_player_tile_body">Il est temps de tenir tes comptes ! Appuie sur une case pour ajouter un point ou reste appuyé pour en enlver un.</string>
+    <string name="hint_player_body">Il n\'y a qu\'un joueur pour le moment. Donne-lui un nom et une couleur pour le reconnaitre facilement !</string>
+    <string name="hint_player_tile_body">Il est temps de tenir tes comptes ! Appuie sur une case pour ajouter un point ou reste appuyé pour en enlever un.</string>
     <string name="hint_player_tile_title">C\'est le moment</string>
     <string name="hint_player_title">Tout commence avec un joueur</string>
     <string name="hint_start_body">Une fois que tout est fait, clique ici et soit prêt à jouer !</string>
