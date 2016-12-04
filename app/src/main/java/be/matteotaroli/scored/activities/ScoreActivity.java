@@ -21,30 +21,24 @@ package be.matteotaroli.scored.activities;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.GridLayout;
 import android.view.View;
 
 import java.util.ArrayList;
 
-import be.matteotaroli.scored.Listeners.RecyclerItemClickListener;
-import be.matteotaroli.scored.Listeners.RecyclerItemLongClickListener;
 import be.matteotaroli.scored.R;
-import be.matteotaroli.scored.adapters.CountAdapter;
 import be.matteotaroli.scored.pojos.Player;
+import be.matteotaroli.scored.views.ScoreView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * Activity that allows the user to manage players' score.
  */
-public class ScoreActivity extends ActivityWithHints implements RecyclerItemClickListener, RecyclerItemLongClickListener {
+public class ScoreActivity extends ActivityWithHints {
 
-    @BindView(R.id.recyclerview)
-    RecyclerView recyclerView;
-
-    private RecyclerView.Adapter adapter;
+    @BindView(R.id.grid)
+    GridLayout grid;
 
     private ArrayList<Player> players;
 
@@ -65,17 +59,7 @@ public class ScoreActivity extends ActivityWithHints implements RecyclerItemClic
             players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
         }
 
-
-        recyclerView.setHasFixedSize(true);
-
-        if (players.size() % 2 == 0) {
-            recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        } else {
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        }
-
-        adapter = new CountAdapter(players, this, this);
-        recyclerView.setAdapter(adapter);
+        setLayout();
 
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -84,24 +68,42 @@ public class ScoreActivity extends ActivityWithHints implements RecyclerItemClic
         showHints();
     }
 
+    private void setLayout() {
+        if (players.size() == 2 || players.size() % 2 != 0) {
+            setLayoutOdd();
+        } else {
+            setLayoutEven();
+        }
+    }
+
+    private void setLayoutOdd() {
+        grid.setColumnCount(1);
+        grid.setRowCount(players.size());
+        for (int i = 0; i < players.size(); i++) {
+            Player p = players.get(i);
+            ScoreView view = new ScoreView(this, p);
+            grid.addView(view, i, new GridLayout.LayoutParams(GridLayout.spec(i, 1, 1f), GridLayout.spec(0, 1, 1f)));
+        }
+    }
+
+    private void setLayoutEven() { /* TODO find why this doesn't work */
+        for (int i = 0; i < players.size(); i++) {
+            Player p = players.get(i);
+            ScoreView view = new ScoreView(this, p);
+            view.setId(i);
+            if (i % 2 == 0) {
+                grid.addView(view, i, new GridLayout.LayoutParams(GridLayout.spec(i / 2, 1f), GridLayout.spec(0, 1f)));
+            } else {
+                grid.addView(view, i, new GridLayout.LayoutParams(GridLayout.spec((i - 1) / 2, 1f), GridLayout.spec(1, 1f)));
+            }
+        }
+    }
+
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelableArrayList(getString(R.string.players_key), players);
-    }
-
-    @Override
-    public void onClick(View v, int position) {
-        Player p = players.get(position);
-        p.incrementScore();
-        adapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onLongClick(View v, int position) {
-        Player p = players.get(position);
-        p.decrementScore();
-        adapter.notifyDataSetChanged();
     }
 
     private void showHints() {
@@ -120,10 +122,9 @@ public class ScoreActivity extends ActivityWithHints implements RecyclerItemClic
 
     private void showPlayerTileHint() {
         Resources res = getResources();
-        View view = recyclerView.getChildAt(0);
+        View view = grid.getChildAt(0);
         String title = res.getString(R.string.hint_player_tile_title),
                 body = res.getString(R.string.hint_player_tile_body);
-
         showRectangularHint(view, title, body, null);
     }
 

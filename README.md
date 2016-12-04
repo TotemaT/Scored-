@@ -9,7 +9,7 @@
 ##How to use
 
 - Add up to 8 players
-- Choose a colour and name for each player
+- Choose a color and name for each player
 - Click on start
 - To increment a player's score, simply click on their tile
 - To decrement a player's score, long click on their tile

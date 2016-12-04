@@ -8,7 +8,7 @@
     <string name="minimum_players_toast">You need at least 1 player to start ;)</string>
 
     <string name="hint_player_title">It all starts with one player</string>
-    <string name="hint_player_body">Here is the only player so far. Enter a name and choose a colour to easily recognize this player.</string>
+    <string name="hint_player_body">Here is the only player so far. Enter a name and choose a color to easily recognize this player.</string>
     <string name="hint_add_player_title">Now add some friends</string>
     <string name="hint_add_player_body">Click here to add up to 8 players.</string>
     <string name="hint_start_title">Let\'s start playing!</string>
