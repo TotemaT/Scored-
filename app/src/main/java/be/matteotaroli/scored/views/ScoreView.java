@@ -114,7 +114,7 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         } else {
             scoreTextView.setGravity(Gravity.CENTER);
         }
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         scoreTextView.setLayoutParams(params);
     }
 
@@ -131,14 +131,14 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
             nameTextView.setGravity(Gravity.CENTER);
         }
 
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.BELOW, R.id.score_text_view);
         nameTextView.setLayoutParams(params);
     }
 
     private RelativeLayout initializeContainer() {
         RelativeLayout container = new RelativeLayout(getContext());
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
         container.setLayoutParams(params);
         return container;

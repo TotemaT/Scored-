@@ -59,12 +59,11 @@ public class ScoreActivity extends ActivityWithHints {
             players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
         }
 
-        setLayout();
-
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        setLayout();
         showHints();
     }
 
@@ -82,20 +81,28 @@ public class ScoreActivity extends ActivityWithHints {
         for (int i = 0; i < players.size(); i++) {
             Player p = players.get(i);
             ScoreView view = new ScoreView(this, p);
-            grid.addView(view, i, new GridLayout.LayoutParams(GridLayout.spec(i, 1, 1f), GridLayout.spec(0, 1, 1f)));
+            grid.addView(view, new GridLayout.LayoutParams(GridLayout.spec(i, 1, 1f), GridLayout.spec(0, 1, 1f)));
         }
     }
 
-    private void setLayoutEven() { /* TODO find why this doesn't work */
+    private void setLayoutEven() {
+        grid.setColumnCount(2);
+        grid.setRowCount(players.size() / 2);
+
         for (int i = 0; i < players.size(); i++) {
             Player p = players.get(i);
             ScoreView view = new ScoreView(this, p);
             view.setId(i);
+
+            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
             if (i % 2 == 0) {
-                grid.addView(view, i, new GridLayout.LayoutParams(GridLayout.spec(i / 2, 1f), GridLayout.spec(0, 1f)));
+                params.columnSpec = GridLayout.spec(0, 1, 1f);
+                params.rowSpec = GridLayout.spec(i / 2, 1, 1f);
             } else {
-                grid.addView(view, i, new GridLayout.LayoutParams(GridLayout.spec((i - 1) / 2, 1f), GridLayout.spec(1, 1f)));
+                params.columnSpec = GridLayout.spec(1, 1, 1f);
+                params.rowSpec = GridLayout.spec((i - 1) / 2, 1, 1f);
             }
+            grid.addView(view, params);
         }
     }
 
