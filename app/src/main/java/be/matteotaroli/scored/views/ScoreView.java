@@ -3,7 +3,6 @@ package be.matteotaroli.scored.views;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
@@ -108,13 +107,8 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         scoreTextView.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
         scoreTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.scoreview_score_size));
 
-
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            scoreTextView.setTextAlignment(TEXT_ALIGNMENT_CENTER);
-        } else {
-            scoreTextView.setGravity(Gravity.CENTER);
-        }
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
         scoreTextView.setLayoutParams(params);
     }
 
@@ -125,14 +119,9 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.scoreview_name_size));
         nameTextView.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
 
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            nameTextView.setTextAlignment(TEXT_ALIGNMENT_CENTER);
-        } else {
-            nameTextView.setGravity(Gravity.CENTER);
-        }
-
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.BELOW, R.id.score_text_view);
+        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
         nameTextView.setLayoutParams(params);
     }
 
