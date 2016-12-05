@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- ScoreView dimensions -->
-    <dimen name="scoreview_score_size">64sp</dimen>
-    <dimen name="scoreview_name_size">30sp</dimen>
-</resources>

@@ -4,13 +4,13 @@
     <string name="start">Start</string>
     <string name="remove_item">Entferne Spieler</string>
     <string name="player_name_hint">Spielername</string>
-    <string name="maximum_players_toast">Du kannst nur bis zu 8 Spieler hinzufügen :(</string>
+    <string name="maximum_players_toast">Du kannst nur bis zu 10 Spieler hinzufügen :(</string>
     <string name="minimum_players_toast">Du brauchst wenigstens einen Spieler um zu beginnen ;)</string>
 
     <string name="hint_player_title">Alles beginnt mit einem Spieler</string>
     <string name="hint_player_body">Hier ist der einzige Spieler bislang.Füge einen Namen hinzu und wähle eine Farbe, damit dieser Spieler einfach wiederzuerkennen ist.</string>
     <string name="hint_add_player_title">Füge jetzt Freunde hinzu</string>
-    <string name="hint_add_player_body">Klicke hier um bis zu 8 Spieler hinzuzufügen.</string>
+    <string name="hint_add_player_body">Klicke hier um bis zu 10 Spieler hinzuzufügen.</string>
     <string name="hint_start_title">Lasst uns beginnen!</string>
     <string name="hint_start_body">Sobald du alle Spieler festgelegt hast, kannst du hier klicken um zu beginnen!</string>
     <string name="hint_player_tile_title">Jetzt wird es Zeit</string>

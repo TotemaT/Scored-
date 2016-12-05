@@ -37,6 +37,7 @@ import butterknife.ButterKnife;
  */
 public class ScoreActivity extends ActivityWithHints {
 
+    private static final String TAG = "ScoreActivity";
     @BindView(R.id.grid)
     GridLayout grid;
 
@@ -45,9 +46,6 @@ public class ScoreActivity extends ActivityWithHints {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_score);
-
-        ButterKnife.bind(this);
 
         if (savedInstanceState == null) {
             Intent i = getIntent();
@@ -68,49 +66,24 @@ public class ScoreActivity extends ActivityWithHints {
     }
 
     private void setLayout() {
-        if (players.size() == 2 || players.size() % 2 != 0) {
-            setLayoutOdd();
-        } else {
-            setLayoutEven();
-        }
-    }
-
-    private void setLayoutOdd() {
-        grid.setColumnCount(1);
-        grid.setRowCount(players.size());
-        for (int i = 0; i < players.size(); i++) {
-            Player p = players.get(i);
-            ScoreView view = new ScoreView(this, p);
-            grid.addView(view, new GridLayout.LayoutParams(GridLayout.spec(i, 1, 1f), GridLayout.spec(0, 1, 1f)));
-        }
-    }
-
-    private void setLayoutEven() {
-        grid.setColumnCount(2);
-        grid.setRowCount(players.size() / 2);
+        setContentView(getResources().getIdentifier("activity_score_" + players.size(), "layout", getPackageName()));
+        ButterKnife.bind(this);
 
         for (int i = 0; i < players.size(); i++) {
-            Player p = players.get(i);
-            ScoreView view = new ScoreView(this, p);
-            view.setId(i);
-
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            if (i % 2 == 0) {
-                params.columnSpec = GridLayout.spec(0, 1, 1f);
-                params.rowSpec = GridLayout.spec(i / 2, 1, 1f);
-            } else {
-                params.columnSpec = GridLayout.spec(1, 1, 1f);
-                params.rowSpec = GridLayout.spec((i - 1) / 2, 1, 1f);
-            }
-            grid.addView(view, params);
+            ((ScoreView) grid.getChildAt(i)).setPlayer(players.get(i));
         }
     }
-
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelableArrayList(getString(R.string.players_key), players);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
     }
 
     private void showHints() {

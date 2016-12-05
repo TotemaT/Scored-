@@ -2,12 +2,12 @@ package be.matteotaroli.scored.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -29,13 +29,14 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
     private static final String SCORE_KEY = "score_key";
     private static final String COLOUR_KEY = "colour_key";
     private static final String SUPER_STATE_KEY = "super_state_key";
+    private static final String TAG = "ScoreView";
 
     private String name;
     private int score;
     private int color;
 
     private TextView scoreTextView;
-    private TextView nameTextView;
+    public TextView nameTextView;
 
     public ScoreView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -46,7 +47,7 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         try {
             name = a.getString(R.styleable.ScoreView_name);
             score = a.getInt(R.styleable.ScoreView_score, 0);
-            color = a.getColor(R.styleable.ScoreView_color, Color.GREEN);
+            color = a.getColor(R.styleable.ScoreView_color, ContextCompat.getColor(context, R.color.blue_grey));
         } finally {
             a.recycle();
         }
@@ -88,7 +89,8 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         this.setClickable(true);
         this.setOnClickListener(this);
         this.setOnLongClickListener(this);
-        this.setBackgroundColor(color);
+        this.setColor(color);
+        this.setLayoutParams(new ViewGroup.LayoutParams(0, 0));
 
         RelativeLayout container = initializeContainer();
         initializeScoreTextView();
@@ -129,6 +131,7 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         RelativeLayout container = new RelativeLayout(getContext());
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
+        params.setMargins(0, 0, 0, 0);
         container.setLayoutParams(params);
         return container;
     }
@@ -139,10 +142,11 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
     }
 
     public void setScore(int score) {
+        // Log.d(TAG, "Set Score : " + score);
         this.score = score;
         scoreTextView.setText(String.valueOf(score));
-        invalidate();
-        requestLayout();
+        scoreTextView.invalidate();
+        scoreTextView.requestLayout();
     }
 
     public String getName() {
@@ -150,6 +154,7 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
     }
 
     public void setName(String name) {
+        // Log.d(TAG, "Set Name : " + name);
         this.name = name;
         if (name != null && !name.isEmpty()) {
             nameTextView.setVisibility(VISIBLE);
@@ -157,8 +162,8 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
             nameTextView.setVisibility(GONE);
         }
         nameTextView.setText(name);
-        invalidate();
-        requestLayout();
+        nameTextView.invalidate();
+        nameTextView.requestLayout();
     }
 
     public int getColor() {
@@ -166,6 +171,7 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
     }
 
     public void setColor(int color) {
+        // Log.d(TAG, "Set Color : " + color);
         this.color = color;
         this.setBackgroundColor(color);
         invalidate();
@@ -181,5 +187,11 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
     public boolean onLongClick(View view) {
         setScore(getScore() - 1);
         return true;
+    }
+
+    public void setPlayer(Player player) {
+        setName(player.getName());
+        setScore(player.getScore());
+        setColor(player.getColor());
     }
 }

@@ -110,7 +110,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
 
     @OnClick(R.id.add_player_fab)
     void AddNewPlayer() {
-        if (players.size() == 8) {
+        if (players.size() == 10) {
             Toast.makeText(this, R.string.maximum_players_toast, Toast.LENGTH_SHORT).show();
         } else {
             Player p = new Player(palette[players.size()]);
