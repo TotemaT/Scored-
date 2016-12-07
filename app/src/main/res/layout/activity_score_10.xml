@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:columnCount="2"
-    app:orientation="vertical"
     app:rowCount="5">
 
     <be.matteotaroli.scored.views.ScoreView
@@ -78,5 +77,5 @@
         android:layout_height="0dp"
         app:layout_columnWeight="1"
         app:layout_rowWeight="1"/>
-
+    
 </android.support.v7.widget.GridLayout>
