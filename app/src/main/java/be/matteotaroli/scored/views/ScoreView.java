@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -130,7 +131,8 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         RelativeLayout container = new RelativeLayout(getContext());
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
-        params.setMargins(0, 0, 0, 0);
+        int margin = (int) getResources().getDimension(R.dimen.scoreview_margin);
+        params.setMargins(margin, 0, margin, 0);
         container.setLayoutParams(params);
         return container;
     }
@@ -160,6 +162,8 @@ public class ScoreView extends FrameLayout implements View.OnClickListener, View
         } else {
             nameTextView.setVisibility(GONE);
         }
+        nameTextView.setSingleLine(true);
+        nameTextView.setEllipsize(TextUtils.TruncateAt.END);
         nameTextView.setText(name);
         nameTextView.invalidate();
         nameTextView.requestLayout();

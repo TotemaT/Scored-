@@ -26,6 +26,7 @@
     <!-- ScoreView dimensions -->
     <dimen name="scoreview_score_size">42sp</dimen>
     <dimen name="scoreview_name_size">20sp</dimen>
+    <dimen name="scoreview_margin">16dp</dimen>
 
     <!-- Player items dimensions -->
     <dimen name="delete_button_size">48dp</dimen>
