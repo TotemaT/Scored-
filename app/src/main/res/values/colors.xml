@@ -4,6 +4,5 @@
     <color name="primary_dark">#388E3C</color>
     <color name="accent">#FF9800</color>
     <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
     <color name="hint_background">#8BC34A</color>
 </resources>

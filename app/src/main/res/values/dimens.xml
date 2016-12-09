@@ -2,11 +2,12 @@
     <!-- List dimensions -->
     <dimen name="list_top_margin">8dp</dimen>
 
-    <!-- List items dimensions -->
-    <dimen name="item_icon_margin">16dp</dimen>
-    <dimen name="item_text_margin">72dp</dimen>
-    <dimen name="item_height">48dp</dimen>
-    <dimen name="item_icon_size">32dp</dimen>
+    <!-- Player items dimensions -->
+    <dimen name="item_player_delete_button_size">48dp</dimen>
+    <dimen name="item_player_name_margin">16dp</dimen>
+    <dimen name="item_player_icon_margin">16dp</dimen>
+    <dimen name="item_player_height">48dp</dimen>
+    <dimen name="item_player_icon_size">32dp</dimen>
 
     <!-- FAB dimensions -->
     <dimen name="fab_size">56dp</dimen>
@@ -16,8 +17,6 @@
     <dimen name="toolbar_height">56dp</dimen>
     <dimen name="toolbar_padding">16dp</dimen>
     <dimen name="toolbar_title_size">18sp</dimen>
-    <dimen name="toolbar_title_margin">16dp</dimen>
-    <dimen name="toolbar_button_margin">16dp</dimen>
 
     <!-- Hints dimensions -->
     <dimen name="hint_margin">42dp</dimen>
@@ -28,7 +27,4 @@
     <dimen name="scoreview_name_size">20sp</dimen>
     <dimen name="scoreview_margin">16dp</dimen>
 
-    <!-- Player items dimensions -->
-    <dimen name="delete_button_size">48dp</dimen>
-    <dimen name="item_player_name_margin">16dp</dimen>
 </resources>

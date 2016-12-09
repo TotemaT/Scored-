@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="@dimen/item_height"
+              android:layout_height="@dimen/item_player_height"
               android:clickable="true"
               android:orientation="horizontal">
 
     <Button
         android:id="@+id/color_circle_btn"
-        android:layout_width="@dimen/item_icon_size"
-        android:layout_height="@dimen/item_icon_size"
+        android:layout_width="@dimen/item_player_icon_size"
+        android:layout_height="@dimen/item_player_icon_size"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/item_icon_margin"
-        android:layout_marginStart="@dimen/item_icon_margin"
+        android:layout_marginLeft="@dimen/item_player_icon_margin"
+        android:layout_marginStart="@dimen/item_player_icon_margin"
         android:background="@drawable/circle"/>
 
     <EditText
@@ -28,11 +28,11 @@
 
     <ImageButton
         android:id="@+id/remove_btn"
-        android:layout_width="@dimen/delete_button_size"
-        android:layout_height="@dimen/delete_button_size"
+        android:layout_width="@dimen/item_player_delete_button_size"
+        android:layout_height="@dimen/item_player_delete_button_size"
         android:layout_gravity="center_vertical|end"
-        android:layout_marginEnd="@dimen/item_icon_margin"
-        android:layout_marginRight="@dimen/item_icon_margin"
+        android:layout_marginEnd="@dimen/item_player_icon_margin"
+        android:layout_marginRight="@dimen/item_player_icon_margin"
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/remove_item"
         android:src="@drawable/ic_remove"/>

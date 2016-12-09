@@ -21,6 +21,8 @@ package be.matteotaroli.scored.pojos;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Locale;
+
 /**
  * Class representing a player.
  */
@@ -73,7 +75,7 @@ public class Player implements Parcelable {
         return "Player{" +
                 "name='" + name + '\'' +
                 ", score=" + score +
-                ", color=" + "#" + Integer.toHexString(color).toUpperCase() +
+                ", color=" + "#" + Integer.toHexString(color).toUpperCase(Locale.getDefault()) +
                 '}';
     }
 
