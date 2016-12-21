@@ -121,8 +121,13 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
 
     @Override
     public void onColorPickerOpen(final View v, final int position, int color) {
+        String playerName = players.get(position).getName();
+        boolean hasName = playerName != null && !playerName.trim().equals("");
+        String title = hasName ?
+                getString(R.string.color_picker_title_with_name, playerName) :
+                getString(R.string.color_picker_title);
         new SpectrumDialog.Builder(this)
-                .setTitle("Choose a color")
+                .setTitle(title)
                 .setColors(R.array.palette)
                 .setSelectedColor(color)
                 .setDismissOnColorSelected(true)

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
     <resources>
-    <string name="app_name">Scored!</string>
-    <string name="start">Start</string>
+        <string name="start">Start</string>
     <string name="remove_item">Entferne Spieler</string>
     <string name="player_name_hint">Spielername</string>
     <string name="maximum_players_toast">Du kannst nur bis zu 10 Spieler hinzufügen :(</string>
@@ -15,5 +14,7 @@
     <string name="hint_start_body">Sobald du alle Spieler festgelegt hast, kannst du hier klicken um zu beginnen!</string>
     <string name="hint_player_tile_title">Jetzt wird es Zeit</string>
     <string name="hint_player_tile_body">Jetzt wird es Zeit zu zählen! Einmal tippen gibt einem Spieler einen Punkt, ein langes tippen entfernt einen Punkt.Viel Spaß!</string>
+    <string name="color_picker_title">Wähle eine Farbe</string>
+    <string name="color_picker_title_with_name">Wähle eine Farbe für %1$s</string>
 
 </resources>

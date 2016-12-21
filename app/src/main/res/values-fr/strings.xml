@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Scored!</string>
     <string name="hint_add_player_body">Clique ici pour ajouter jusqu\'à 10 joueurs.</string>
     <string name="hint_add_player_title">Ajoute des amis !</string>
     <string name="hint_player_body">Il n\'y a qu\'un joueur pour le moment. Donne-lui un nom et une couleur pour le reconnaitre facilement !</string>
@@ -14,4 +13,6 @@
     <string name="player_name_hint">Nom du joueur</string>
     <string name="remove_item">Supprimer le joueur</string>
     <string name="start">Commencer</string>
+    <string name="color_picker_title">Choisis une couleur</string>
+    <string name="color_picker_title_with_name">Choisis une couleur pour %1$s</string>
 </resources>
