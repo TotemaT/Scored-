@@ -27,9 +27,11 @@ import android.support.annotation.ColorInt;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.joanfuentes.hintcase.HintCase;
@@ -50,11 +52,10 @@ import butterknife.OnClick;
  * Activity that allows the user to manage players.
  */
 public class SelectionActivity extends ActivityWithHints implements ColorPickerListener, RecyclerRemoveItemListener {
-
     private final static String TAG = "SelectionActivity";
 
-    @BindView(R.id.start_btn)
-    Button startBtn;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
     @BindView(R.id.add_player_fab)
     FloatingActionButton addPlayerFab;
     @BindView(R.id.recyclerview)
@@ -84,7 +85,26 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
         }
         adapter = new PlayerAdapter(players, this, this);
         recyclerView.setAdapter(adapter);
+
+        setSupportActionBar(toolbar);
         showHints();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_selection, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.btn_start:
+                start();
+                return true;
+            default:
+                return false;
+        }
     }
 
     @Override
@@ -94,8 +114,7 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
         outState.putParcelableArrayList(getString(R.string.players_key), players);
     }
 
-    @OnClick(R.id.start_btn)
-    void Start() {
+    void start() {
         if (players.size() == 0) {
             Toast.makeText(this, R.string.minimum_players_toast, Toast.LENGTH_SHORT).show();
             return;
@@ -202,10 +221,9 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
 
     private void showStartHint() {
         Resources res = getResources();
-        View view = startBtn;
+        View view = toolbar.findViewById(R.id.btn_start);
         String title = res.getString(R.string.hint_start_title),
                 body = res.getString(R.string.hint_start_body);
         showCircularHint(view, title, body, null);
     }
-
 }

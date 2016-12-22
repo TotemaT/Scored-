@@ -6,12 +6,19 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
-    <style name="hint_title_style">
+    <style name="HintTitleStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/hint_title_size</item>
     </style>
 
-    <style name="hint_body_style">
+    <style name="HintBodyStyle">
         <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <item name="selectableItemBackground">?android:selectableItemBackground</item>
+        <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>
     </style>
 </resources>

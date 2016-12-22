@@ -106,8 +106,8 @@ public abstract class ActivityWithHints extends AppCompatActivity {
         return new SimpleHintContentHolder.Builder(view.getContext())
                 .setContentTitle(title)
                 .setContentText(body)
-                .setTitleStyle(R.style.hint_title_style)
-                .setContentStyle(R.style.hint_body_style)
+                .setTitleStyle(R.style.HintTitleStyle)
+                .setContentStyle(R.style.HintBodyStyle)
                 .setMarginByResourcesId(R.dimen.hint_margin, R.dimen.hint_margin, R.dimen.hint_margin, R.dimen.hint_margin)
                 .build();
     }
