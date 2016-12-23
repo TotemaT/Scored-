@@ -2,6 +2,8 @@
     <string name="app_name" translatable="false">Scored!</string>
     
     <string name="start">Start</string>
+    <string name="about">About</string>
+
     <string name="remove_item">Remove player</string>
     <string name="player_name_hint">Player\'s name</string>
     <string name="maximum_players_toast">You can only add up to 10 players :(</string>

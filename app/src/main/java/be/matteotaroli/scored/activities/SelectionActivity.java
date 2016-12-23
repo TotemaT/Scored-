@@ -25,13 +25,16 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.joanfuentes.hintcase.HintCase;
@@ -102,9 +105,22 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
             case R.id.btn_start:
                 start();
                 return true;
+            case R.id.item_about:
+                showLicenseDialog();
+                return true;
             default:
                 return false;
         }
+    }
+
+    private void showLicenseDialog() {
+        WebView view = (WebView) LayoutInflater.from(this).inflate(R.layout.dialog_licenses, null);
+        view.loadUrl("file:///android_asset/open-source-licenses.html");
+        new AlertDialog.Builder(this, R.style.Theme_AppCompat_Light_Dialog_Alert)
+                .setTitle(R.string.about)
+                .setView(view)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
     }
 
     @Override

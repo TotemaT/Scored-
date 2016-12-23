@@ -15,4 +15,5 @@
     <string name="start">Commencer</string>
     <string name="color_picker_title">Choisis une couleur</string>
     <string name="color_picker_title_with_name">Choisis une couleur pour %1$s</string>
+    <string name="about">A propos</string>
 </resources>
