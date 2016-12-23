@@ -2,10 +2,12 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.AboutActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -54,11 +56,9 @@
                 android:orientation="vertical">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/butterknife"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:foreground="?selectableItemBackground"
+                    android:clickable="false"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true">
 
@@ -73,7 +73,12 @@
                             android:layout_gravity="bottom"
                             android:background="@color/primary"
                             android:orientation="horizontal"
-                            android:padding="8dp">
+                            android:paddingBottom="8dp"
+                            android:paddingEnd="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingStart="16dp"
+                            android:paddingTop="24dp">
 
                             <TextView
                                 style="@style/LicenseTitleStyle"
@@ -96,17 +101,40 @@
                             style="@style/LicenseBodyStyle"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/butterknife_license"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                style="@style/LicenseMainButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:onClick="goToButterknife"
+                                android:text="@string/go_to_website"/>
+
+                            <Button
+                                style="@style/LicenseSecondaryButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:onClick="goToApache"
+                                android:text="@string/go_to_license"/>
+                        </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/hintcase"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:foreground="?selectableItemBackground"
+                    android:clickable="false"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true">
 
@@ -121,7 +149,12 @@
                             android:layout_gravity="bottom"
                             android:background="@color/primary"
                             android:orientation="horizontal"
-                            android:padding="8dp">
+                            android:paddingBottom="8dp"
+                            android:paddingEnd="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingStart="16dp"
+                            android:paddingTop="24dp">
 
                             <TextView
                                 style="@style/LicenseTitleStyle"
@@ -144,17 +177,40 @@
                             style="@style/LicenseBodyStyle"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/hintcase_license"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                style="@style/LicenseMainButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:onClick="goToHintcase"
+                                android:text="@string/go_to_website"/>
+
+                            <Button
+                                style="@style/LicenseSecondaryButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:onClick="goToApache"
+                                android:text="@string/go_to_license"/>
+                        </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/spectrum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:foreground="?selectableItemBackground"
+                    android:clickable="false"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true">
 
@@ -169,7 +225,12 @@
                             android:layout_gravity="bottom"
                             android:background="@color/primary"
                             android:orientation="horizontal"
-                            android:padding="8dp">
+                            android:paddingBottom="8dp"
+                            android:paddingEnd="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingStart="16dp"
+                            android:paddingTop="24dp">
 
                             <TextView
                                 style="@style/LicenseTitleStyle"
@@ -192,8 +253,33 @@
                             style="@style/LicenseBodyStyle"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/spectrum_license"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                style="@style/LicenseMainButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:onClick="goToSpectrum"
+                                android:text="@string/go_to_website"/>
+
+                            <Button
+                                style="@style/LicenseSecondaryButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:onClick="goToMit"
+                                android:text="@string/go_to_license"/>
+                        </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 

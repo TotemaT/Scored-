@@ -43,4 +43,19 @@
         <item name="android:textColor">@color/secondary_text</item>
     </style>
 
+    <style name="licenseButtonStyle">
+        <item name="android:background">#00FFFFFF</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingLeft">16dp</item>
+    </style>
+
+    <style name="LicenseMainButtonStyle" parent="licenseButtonStyle">
+        <item name="android:textColor">@color/accent</item>
+    </style>
+
+    <style name="LicenseSecondaryButtonStyle" parent="licenseButtonStyle">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+
 </resources>

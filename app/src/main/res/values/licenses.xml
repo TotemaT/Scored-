@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="apache2">Apache v2.0</string>
-    <string name="mit">MIT</string>
+    <string name="apache2" translatable="false">Apache v2.0</string>
+    <string name="apache_url" translatable="false">https://www.apache.org/licenses/LICENSE-2.0</string>
+    <string name="mit" translatable="false">MIT</string>
+    <string name="mit_url" translatable="false">https://opensource.org/licenses/MIT</string>
+
+    <string name="go_to_license" translatable="false">See full license</string>
+    <string name="go_to_website" translatable="false">Go to website</string>
 
     <string name="butterknife_name" translatable="false">Butter Knife</string>
     <string name="butterknife_url" translatable="false">https://jakewharton.github.io/butterknife/</string>

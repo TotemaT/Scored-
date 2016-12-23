@@ -5,11 +5,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import be.matteotaroli.scored.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by matt on 23/12/16.
@@ -34,24 +34,29 @@ public class AboutActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    @OnClick(R.id.butterknife)
-    void goToButterKnife() {
-        goToWebSite(getString(R.string.butterknife_url));
-    }
-
-    @OnClick(R.id.hintcase)
-    void goToHintcase() {
-        goToWebSite(getString(R.string.hintcase_url));
-    }
-
-    @OnClick(R.id.spectrum)
-    void goToSpectrum() {
-        goToWebSite(getString(R.string.spectrum_url));
-    }
-
     void goToWebSite(String url) {
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
+    }
+
+    public void goToButterknife(View view) {
+        goToWebSite(getString(R.string.butterknife_url));
+    }
+
+    public void goToHintcase(View view) {
+        goToWebSite(getString(R.string.hintcase_url));
+    }
+
+    public void goToSpectrum(View view) {
+        goToWebSite(getString(R.string.spectrum_url));
+    }
+
+    public void goToApache(View view) {
+        goToWebSite(getString(R.string.apache_url));
+    }
+
+    public void goToMit(View view) {
+        goToWebSite(getString(R.string.mit_url));
     }
 }
