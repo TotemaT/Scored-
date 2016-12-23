@@ -3,7 +3,7 @@
 
     <string name="start">Start</string>
     <string name="about">About</string>
-    <string name="about_text">Scored! is made by Matteo Taroli and make use of the Open-Source libraries listed below.</string>
+    <string name="about_text" translatable="false">Scored! is made by Matteo Taroli and makes use of the Open-Source libraries listed below.</string>
 
     <string name="remove_item">Remove player</string>
     <string name="player_name_hint">Player\'s name</string>
@@ -25,5 +25,4 @@
     <string name="pref_first_time_score_activity" translatable="false">pref_first_time_score_activity</string>
     <string name="color_picker_title">Pick a color</string>
     <string name="color_picker_title_with_name">Pick a color for %1$s</string>
-
 </resources>

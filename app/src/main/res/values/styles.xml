@@ -4,6 +4,8 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="windowActionBar">false</item>
     </style>
 
     <style name="HintTitleStyle">
@@ -21,4 +23,24 @@
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
         <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>
     </style>
+
+    <style name="LicenseDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/background_color</item>
+    </style>
+
+    <style name="LicenseTitleStyle">
+        <item name="android:textSize">@dimen/license_title_size</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="LicenseSubtitleStyle">
+        <item name="android:textSize">@dimen/license_text_size</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="LicenseBodyStyle">
+        <item name="android:textSize">@dimen/license_text_size</item>
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+
 </resources>

@@ -16,5 +16,6 @@
     <string name="hint_player_tile_body">Jetzt wird es Zeit zu zählen! Einmal tippen gibt einem Spieler einen Punkt, ein langes tippen entfernt einen Punkt.Viel Spaß!</string>
     <string name="color_picker_title">Wähle eine Farbe</string>
     <string name="color_picker_title_with_name">Wähle eine Farbe für %1$s</string>
+    <string name="about">Über</string>
 
 </resources>
