@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">Scored!</string>
-    
+
     <string name="start">Start</string>
     <string name="about">About</string>
+    <string name="about_text">Scored! is made by Matteo Taroli and make use of the Open-Source libraries listed below.</string>
 
     <string name="remove_item">Remove player</string>
     <string name="player_name_hint">Player\'s name</string>

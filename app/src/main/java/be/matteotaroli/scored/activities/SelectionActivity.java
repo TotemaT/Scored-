@@ -114,8 +114,9 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
     }
 
     private void showLicenseDialog() {
-        WebView view = (WebView) LayoutInflater.from(this).inflate(R.layout.dialog_licenses, null);
-        view.loadUrl("file:///android_asset/open-source-licenses.html");
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_licenses, null);
+        WebView webView = (WebView) view.findViewById(R.id.webview);
+        webView.loadUrl("file:///android_asset/open-source-licenses.html");
         new AlertDialog.Builder(this, R.style.Theme_AppCompat_Light_Dialog_Alert)
                 .setTitle(R.string.about)
                 .setView(view)
