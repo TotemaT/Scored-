@@ -6,8 +6,9 @@
     <dimen name="item_player_delete_button_size">48dp</dimen>
     <dimen name="item_player_name_margin">16dp</dimen>
     <dimen name="item_player_icon_margin">16dp</dimen>
-    <dimen name="item_player_height">48dp</dimen>
-    <dimen name="item_player_icon_size">32dp</dimen>
+    <dimen name="item_player_height">56dp</dimen>
+    <dimen name="item_player_icon_size">40dp</dimen>
+    <dimen name="item_player_text_size">16sp</dimen>
 
     <!-- FAB dimensions -->
     <dimen name="fab_size">56dp</dimen>

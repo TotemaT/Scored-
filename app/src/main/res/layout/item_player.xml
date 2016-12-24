@@ -20,6 +20,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/item_player_name_margin"
         android:layout_marginStart="@dimen/item_player_name_margin"
+        android:textSize="@dimen/item_player_text_size"
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:gravity="center_vertical|start"
