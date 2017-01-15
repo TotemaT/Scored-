@@ -25,4 +25,13 @@
     <string name="pref_first_time_score_activity" translatable="false">pref_first_time_score_activity</string>
     <string name="color_picker_title">Pick a color</string>
     <string name="color_picker_title_with_name">Pick a color for %1$s</string>
+
+    <string name="feedback_title">Contact</string>
+    <string name="feedback_subtitle">Send me your feedback</string>
+    <string name="feedback_feedback">Feedback</string>
+    <string name="feedback_improvement">Improvement</string>
+    <string name="feedback_bug">Bug</string>
+    <string name="feedback_other">Other</string>
+    <string name="feedback_hint">Feedback</string>
+    <string name="send_feedback_btn">Send feedback</string>
 </resources>
