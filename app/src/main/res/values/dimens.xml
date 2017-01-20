@@ -14,11 +14,6 @@
     <dimen name="fab_size">56dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <!-- Toolbar dimensions -->
-    <dimen name="toolbar_height">56dp</dimen>
-    <dimen name="toolbar_padding">16dp</dimen>
-    <dimen name="toolbar_title_size">18sp</dimen>
-
     <!-- Hints dimensions -->
     <dimen name="hint_margin">42dp</dimen>
     <dimen name="hint_title_size">35sp</dimen>

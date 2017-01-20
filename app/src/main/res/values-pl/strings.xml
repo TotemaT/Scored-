@@ -16,5 +16,6 @@
     <string name="hint_player_tile_body">Czas na wyliczanię! Zwykłe naciśnęcię na kwadrat doda jeden punkt graczu. Długi nacisk odejmuje punkt. Miłej zabawy! </string>
     <string name="color_picker_title">Wybierz kolor</string>
     <string name="color_picker_title_with_name">Wybierz kolor dla %1$s</string>
+    <string name="about">A propos</string>
 
 </resources>

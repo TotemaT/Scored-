@@ -7,8 +7,8 @@ repositories {
 }
 
 def majorVersion = 0
-def minorVersion = 2
-def patchVersion = 2
+def minorVersion = 3
+def patchVersion = 0
 def bumpVersion = 0;
 
 android {
