@@ -34,6 +34,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.joanfuentes.hintcase.HintCase;
 import com.thebluealliance.spectrum.SpectrumDialog;
 
@@ -47,6 +48,7 @@ import be.matteotaroli.scored.pojos.Player;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Activity that allows the user to manage players.
@@ -68,6 +70,8 @@ public class SelectionActivity extends ActivityWithHints implements ColorPickerL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
+
         setContentView(R.layout.activity_selection);
 
         ButterKnife.bind(this);
