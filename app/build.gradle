@@ -6,8 +6,8 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 
-def majorVersion = 0
-def minorVersion = 3
+def majorVersion = 1
+def minorVersion = 0
 def patchVersion = 0
 def bumpVersion = 0;
 
@@ -18,11 +18,12 @@ android {
         applicationId "be.matteotaroli.scored"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode majorVersion * 10000 + minorVersion * 1000 +patchVersion * 100 + bumpVersion
+        versionCode majorVersion * 10000 + minorVersion * 1000 + patchVersion * 100 + bumpVersion
         versionName "${majorVersion}.${minorVersion}.${patchVersion}"
     }
     buildTypes {
         release {
+            shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
