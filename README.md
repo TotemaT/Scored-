@@ -6,17 +6,23 @@
 
 ***Scored!*** is primarily meant to help keep each player's score while playing board games. Besides that, it can be used to keep count of anything at all.
 
-## Download
-You can download the apk from those links :
-- [Github](https://github.com/TotemaT/Scored-/releases/latest)
-- [Google Play Store](https://play.google.com/store/apps/details?id=be.matteotaroli.scored)
-
 ## How to use
 - Add up to 10 players
 - Choose a color and name for each player
 - Click on start
 - To increment a player's score, simply click on their tile
 - To decrement a player's score, long click on their tile
+
+## Screenshots
+|![](screenshots/1.png)|![](screenshots/2.png)|![](screenshots/3.png)|
+|:-:|:-:|:-:|
+|Starting screen|Playing with my pets|Losing to my pets|
+
+## Download
+You can download the apk from those links :
+
+- [Github](https://github.com/TotemaT/Scored-/releases/latest)
+- [Google Play Store](https://play.google.com/store/apps/details?id=be.matteotaroli.scored)
 
 ## Thanks
 - **[Jennifer Hall](https://www.instagram.com/yourcottonmouth/)** for the logo and German translation
@@ -25,6 +31,7 @@ You can download the apk from those links :
 
 ## Libraries
 ***Scored!*** uses the following libraries :
+
 - [ButterKnife](https://jakewharton.github.io/butterknife/)
 - [HintCase](https://github.com/Nescafemix/hintcase)
 - [Spectrum](https://github.com/the-blue-alliance/spectrum)
