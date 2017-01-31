@@ -6,8 +6,12 @@
 
 ***Scored!*** is primarily meant to help keep each player's score while playing board games. Besides that, it can be used to keep count of anything at all.
 
-## How to use
+## Download
+You can download the apk from those links :
+- [Github](https://github.com/TotemaT/Scored-/releases/latest)
+- [Google Play Store](https://play.google.com/store/apps/details?id=be.matteotaroli.scored)
 
+## How to use
 - Add up to 10 players
 - Choose a color and name for each player
 - Click on start
