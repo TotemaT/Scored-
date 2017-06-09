@@ -1,6 +1,7 @@
 <div align="center">
 	<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
 </div>
+
 # Scored!
 
 [![Build Status](https://travis-ci.org/TotemaT/Scored-.svg?branch=master)](https://travis-ci.org/TotemaT/Scored-) ![License GPL3](https://img.shields.io/github/license/TotemaT/scored-.svg)
