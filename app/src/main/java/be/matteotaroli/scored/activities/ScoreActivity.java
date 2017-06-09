@@ -57,15 +57,18 @@ public class ScoreActivity extends ActivityWithHints {
         } else {
             players = savedInstanceState.getParcelableArrayList(getString(R.string.players_key));
         }
+        setLayout();
+        showHints();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-        setLayout();
-        showHints();
     }
 
     private void setLayout() {
