@@ -6,9 +6,9 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 
-def majorVersion = 1
-def minorVersion = 0
-def patchVersion = 0
+def majorVersion = 1;
+def minorVersion = 0;
+def patchVersion = 1;
 def bumpVersion = 0;
 
 android {
