@@ -2,7 +2,8 @@
 	<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
 </div>
 # Scored!
-![Build Status](https://travis-ci.com/TotemaT/Scored-.svg?token=yJBmbVBshhaMztbgxQd2&branch=master) ![License GPL3](https://img.shields.io/github/license/TotemaT/scored-.svg)
+
+[![Build Status](https://travis-ci.org/TotemaT/Scored-.svg?branch=master)](https://travis-ci.org/TotemaT/Scored-) ![License GPL3](https://img.shields.io/github/license/TotemaT/scored-.svg)
 
 ***Scored!*** is primarily meant to help keep each player's score while playing board games. Besides that, it can be used to keep count of anything at all.
 
